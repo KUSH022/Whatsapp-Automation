@@ -3,12 +3,10 @@ import pywhatkit
 import streamlit as st
 
 def read_excel(file_path):
-    # Ensure phone numbers are read as strings
     data = pd.read_excel(file_path, dtype={'Phone Number': str})
     return data
 
 def send_whatsapp_message(name, phone_number, message, country_code='+91'):
-    # Ensure the phone number has the country code
     if not phone_number.startswith('+'):
         phone_number = country_code + phone_number
     
